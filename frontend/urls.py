@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
-
 # Serializers定义了API的表现.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -40,5 +39,4 @@ urlpatterns = [
     url(r'^api', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # url(r'^api-token-auth/', obtain_jwt_token),
 ]
